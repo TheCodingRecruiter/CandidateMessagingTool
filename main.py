@@ -37,6 +37,7 @@ availability = 'https://prelude.amazon.com/'
 # Iterating over the dicitonary objects and accessing the value of the keys
 for i in json_dictionary:
   # Define variables based upon heading of each column to extract the value of the cell for each of these
+  # Define others if required for your messaging
   name = (i["Candidate Name"])
   email = (i["Email"])
   phone = (i["Phone Number"])
@@ -44,7 +45,7 @@ for i in json_dictionary:
   id = int((i["ID"]))
   status = (i["Status"])
   
-  # Creating the message for each candidate using F-Strings
+  # Creating the message for each candidate using F-Strings. Can alter, add, delete as needed
   message = (
     f"{phone}"
     f"{nl}"
@@ -53,5 +54,7 @@ for i in json_dictionary:
     f"Hello {name}.  I'm a recruiter at Amazon and was sending you this message in regards to your application for the {role} position ({id}).  I would like to schedule some time for us to meet. Here is a link to my availability.  Please feel free to schedule some time for us. at your earliest convienence.{nl} {availability} "
   )
   print(message)
+
+  # Additional print statement for separating the JSON/Dictionary Objects
   print()
 
